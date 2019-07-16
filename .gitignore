@@ -8,8 +8,12 @@ project-quora-html/
 project-bubbles-html/
 presentations/
 assets/private
+*/videos/
 
 # Files
 TOC.md
 *.source.md
+*.source.pdf
 *.key
+*.mp4
+*.vscode

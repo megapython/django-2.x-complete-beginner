@@ -65,4 +65,5 @@ And finally, you will be packaging the Django project for deployment on Heroku a
 
 ## Links
 
-[Quddle.io](https://quddle.io)
+[Mega Python](https://www.octallium.com/megapython)
+[Udemy](https://www.octallium.com/megapython)
