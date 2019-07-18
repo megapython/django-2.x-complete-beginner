@@ -2,7 +2,13 @@ from django.shortcuts import render
 
 
 def home_page(request):
-    return render(request, 'pages/index.html', {'title': 'Home'})
+    context = {
+        'title': 'Home',
+        'username': 'Octallium',
+        'location': 'Mumbai',
+        'age': 13
+    }
+    return render(request, 'pages/index.html', context)
 
 
 def about_page(request):

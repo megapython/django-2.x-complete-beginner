@@ -8,4 +8,7 @@
 
 {% block content %}
 <h1>This is the {{ title }} Page</h1>
+{% include 'pages/_welcome.html' with username=username %}
+
+<p>Hi {{ username }}, you stay at {{ location }}, and are {{ age }} years old.</p>
 {% endblock content %}
