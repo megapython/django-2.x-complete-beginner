@@ -14,7 +14,7 @@ def home_page(request):
     return render(request, 'blog/index.html', context)
 
 
-# Post Detail
+# Post Detail / Detail View
 def post_detail(request, pk):
     # Retreive the post or show a 404 page
     post = get_object_or_404(Post, pk=pk)
@@ -24,7 +24,7 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', context)
 
 
-# Create Post
+# Create Post / Create View
 def create_post(request):
     # If request is of type POST
     if request.method == 'POST':
