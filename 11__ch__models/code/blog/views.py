@@ -1,7 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 
 from .models import Post
-from .forms import CreatePostForm
 
 
 # Home Page / List View
@@ -22,22 +21,3 @@ def post_detail(request, pk):
         'post': post
     }
     return render(request, 'blog/post_detail.html', context)
-
-
-# Create Post / Create View
-def create_post(request):
-    # If request is of type POST
-    if request.method == 'POST':
-        form = CreatePostForm(request.POST)
-        if form.is_valid():
-            # Save form only if valid
-            form.save()
-            return redirect('home')
-    else:
-        # Otherwise request is of type GET
-        form = CreatePostForm()
-    # Create our context variable and assign our form
-    context = {
-        'form': form
-    }
-    return render(request, 'blog/create_post.html', context)
