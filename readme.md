@@ -1,6 +1,6 @@
 # Django 2.2 | The Complete Beginner's Guide
 
-**Learn all the fundamentals of Django for web development and create a 'Quora' clone which you will deploy to Heroku.**
+**Learn all the fundamentals of Django for web development by creating a 'Quora' clone which you will deploy to Heroku.**
 
 ![Django Beginner](assets/img/quddle-udemy-banner-github.png)
 
@@ -28,7 +28,8 @@
     13. User Authentication
     14. Handling Static Files
     15. Packaging Your Django Project
-    16. Deploying on Heroku
+    16. Testing
+    17. Deploying on Heroku
 
 ## Description
 
