@@ -1,0 +1,31 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+{{user.username}}
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <img class="rounded-circle" width="100px" src="{% static 'img/anilkulkarni.png' %}">
+            </div>
+            <div class="mb-3">
+                <h2 class="account-heading">Anil Kulkarni</h2>
+                <p class="text-secondary">anil@octocon.mail</p>
+            </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ user_form|crispy }}
+                {{ profile_form|crispy }}
+                <button class="btn btn-danger" type="submit">Update</button>
+            </form>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+</div>
+{% endblock content %}

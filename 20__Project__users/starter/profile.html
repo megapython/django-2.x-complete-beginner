@@ -1,27 +1,25 @@
-{% load static %}
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'vendor/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/png">
+    <!-- <link rel="shortcut icon" href="img/logo-quddle-cat.png" type="image/png"> -->
 
     <!-- Title -->
-    <title>{% block title %}DJORA{% endblock title %}</title>
+    <title>Djora</title>
 </head>
 
 <body>
-
-    <section class=" section-header mb-5 shadow-sm sticky-top">
+    <section class="section-header mb-5 shadow-sm sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-1">
                 <!-- Brand -->
@@ -36,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <!-- Header - Search Bar -->
                     <form action="" method="POST" class="search ml-4">
-                        <input type="text" class="search__input" placeholder="">
+                        <input type="text" class="search__input" placeholder="" />
                         <button class="search__button">Search</button>
                     </form>
 
@@ -89,20 +87,54 @@
         </div>
     </section>
 
-
-    {% block content %}
-
-    {% endblock content %}
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="content-section">
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <img class="rounded-circle" src="./img/anilkulkarni.png" width="100px" />
+                        </div>
+                        <div class="">
+                            <h2 class="account-heading">Anil Kulkarni</h2>
+                            <p class="text-secondary">anil@octocon.mail</p>
+                        </div>
+                    </div>
+                    <!-- FORM HERE -->
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">Profile Info</legend>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Update Profile Pic</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" />
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                                    placeholder="Username" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter email" />
+                            </div>
+                        </fieldset>
+                        <div class="form-group">
+                            <input class="btn btn-danger" type="submit" value="Update" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{% static 'vendor/js/jquery-3.3.1.min.js' %}">
-    </script>
-    <script src="{% static 'vendor/js/popper.min.js' %}">
-    </script>
-    <script src="{% static 'vendor/js/bootstrap.min.js' %}">
-    </script>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="vendor/js/jquery-3.4.1.min.js"></script>
+    <script src="vendor/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
