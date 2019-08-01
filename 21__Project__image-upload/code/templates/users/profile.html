@@ -15,8 +15,8 @@
                 <img class="rounded-circle" width="100px" src="{{ user.profile.avataar.url }}">
             </div>
             <div class="mb-3">
-                <h2 class="account-heading">Anil Kulkarni</h2>
-                <p class="text-secondary">anil@octocon.mail</p>
+                <h2 class="account-heading">{{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</h2>
+                <p class="text-secondary">{{ user.email }}</p>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
