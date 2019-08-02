@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+Update Answer
+{% endblock title %}
+
+
+{% block content %}
+<h1>Update Answer</h1>
+<h3>Question - {{ question.title }}</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-danger" type="submit">Update Answer</button>
+</form>
+{% endblock content %}

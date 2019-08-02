@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+{{ question.title }}
+{% endblock title %}
+
+
+{% block content %}
+<h1>Question - {{ answer.question.title }}</h1>
+<p>{{ answer.answer }}</p>
+
+{% if show_buttons %}
+<a class="btn btn-danger" href="{% url 'answer_update' answer.question.pk answer.pk %}">Edit Answer</a>
+<a class="btn btn-danger" href="{% url 'answer_delete' answer.question.pk answer.pk %}">Delete Answer</a>
+{% endif %}
+
+<a class="btn btn-danger" href="{% url 'answer_list' answer.question.pk %}">View All Answers</a>
+
+{% endblock content %}
