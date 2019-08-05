@@ -39,15 +39,11 @@ Django is a complete framework with easy configuration for your models, template
 
 In this course you will learn all these fantastic features discussed above. The course is divided into **chapters** which include videos, notes, code samples and quizzes wherever possible. The course take a completely **practical** approach for your learning journey, and you are encouraged to code along with us. Incase of any difficulties, you can refer the code samples or send us a message, we make sure to respond as soon as possible.
 
-The course is designed to introduce concepts gradually with quizzes at the end of each chapter to test your knowledge of Django. The course consist of **2 projects** -
+The course is designed to introduce concepts gradually with quizzes at the end of each chapter to test your knowledge of Django. The course consist of **1 Mega Project** -
 
-    1. Complete Blog Application
+    1. Quora Clone
 
-Using our knowledge we will setup a complete blog application along with user authentication, blog posts, detail views, comments, etc. This project is designed to reinforce all the basic concepts of Django.
-
-    2. Quora Clone
-
-At the end of the course you will be making a fully featured 'Quora' Clone along with custom user authentication, this project will involve all the fundamentals of Django and will also introduce many more advanced concepts.
+At the end of the course you will be making a multi featured 'Quora' Clone called as **'Djora'** (Django + Quora) along with custom user authentication, user profile, questions, answers, image uploads, tests,etc. This project will involve all the fundamentals of Django and will also introduce many more advanced concepts.
 
 And finally, you will be packaging the Django project for deployment on Heroku and going live!!!
 
