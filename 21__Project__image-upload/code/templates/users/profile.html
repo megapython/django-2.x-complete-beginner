@@ -32,13 +32,13 @@ Profile
                     <div class="content-section">
                         <div class="mb-3">
                             <div class="mb-3">
-                                <img class="rounded-circle" src="{% static 'img/anilkulkarni.png' %}" width="100px">
+                                <img class="rounded-circle" src="{{ my_user.profile.avataar.url }}" width="100px">
                             </div>
                             <div class="">
                                 <h2 class="account-heading">{{ my_user.first_name|capfirst }}
                                     {{ my_user.last_name|capfirst }}
                                 </h2>
-                                <p class="text-secondary">{{ my_user.email }}</p>
+                                <p class="text-secondary">Email - {{ my_user.email }}</p>
                                 <p class="text-secondary">Age - {{ my_user.profile.age }}</p>
                             </div>
 

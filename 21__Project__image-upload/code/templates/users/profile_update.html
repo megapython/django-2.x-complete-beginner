@@ -32,22 +32,21 @@ Profile
                     <div class="content-section">
                         <div class="mb-3">
                             <div class="mb-3">
-                                <img class="rounded-circle" src="{% static 'img/anilkulkarni.png' %}" width="100px">
+                                <img class="rounded-circle" src="{{ user.profile.avataar.url }}" width="100px">
                             </div>
                             <div class="">
-                                <h2 class="account-heading">{{ my_user.first_name|capfirst }}
-                                    {{ my_user.last_name|capfirst }}
+                                <h2 class="account-heading">{{ user.first_name|capfirst }} {{ user.last_name|capfirst }}
                                 </h2>
-                                <p class="text-secondary">{{ my_user.email }}</p>
-                                <p class="text-secondary">Age - {{ my_user.profile.age }}</p>
+                                <p class="text-secondary">{{ user.email }}</p>
                             </div>
-
-                            {% if show_buttons %}
-                            <a class="btn btn-danger" href="{% url 'profile_update' user.username %}">Update</a>
-                            {% endif %}
-
                         </div>
-
+                        <!-- FORM HERE -->
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ user_form|crispy }}
+                            {{ profile_form|crispy }}
+                            <button class="btn btn-danger" type="submit">Update</button>
+                        </form>
                     </div>
                 </div>
                 <!-- Question List -->

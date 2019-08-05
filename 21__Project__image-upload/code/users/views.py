@@ -67,7 +67,8 @@ def profile_update(request, username):
         if request.method == 'POST':
             # Get the data from the respective forms
             user_form = CustomUserUpdateForm(request.POST, instance=request.user)
-            profile_form = ProfileUpdateForm(request.POST, instance=request.user.profile)
+            # request.FILES is required to get images/files
+            profile_form = ProfileUpdateForm(request.POST, request.FILES , instance=request.user.profile)
             # Check for validity
             if user_form.is_valid() and profile_form.is_valid():
                 user_form.save()
