@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.shortcuts import reverse
 
 
 # Custom User
@@ -21,3 +22,6 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user.username}'s profile"
+
+    def get_absolute_url(self):
+        return reverse('profile', kwargs={'username': self.username})

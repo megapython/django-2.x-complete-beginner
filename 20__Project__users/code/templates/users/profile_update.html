@@ -39,13 +39,14 @@ Profile
                                 </h2>
                                 <p class="text-secondary">{{ user.email }}</p>
                             </div>
-
-                            {% if show_buttons %}
-                            <a class="btn btn-danger" href="{% url 'profile_update' user.username %}">Update</a>
-                            {% endif %}
-
                         </div>
-
+                        <!-- FORM HERE -->
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ user_form|crispy }}
+                            {{ profile_form|crispy }}
+                            <button class="btn btn-danger" type="submit">Update</button>
+                        </form>
                     </div>
                 </div>
                 <!-- Question List -->

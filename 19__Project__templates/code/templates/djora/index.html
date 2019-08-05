@@ -11,310 +11,401 @@ Home
 <section class="section-main mb-5">
     <div class="container">
         <div class="row main-content">
-            <div class="col-md-2 sidebar-categories">
-                <div class="trending mb-4 pb-4 border-bottom">
-                    <h2 class="lead text-secondary mb-3"># New Topics</h2>
 
-                    <div class="topic mb-3">
-                        <img src="{% static 'img/python.png' %}" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">
-                            <a class="text-secondary" href="#">Python</a>
-                        </h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/django-logo.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">Django</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/flask.jpg" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">Flask</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/javascript.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">Javascript</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/rust.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">Rust</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/html5.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">HTML 5</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/css3.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">CSS 3</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/postgresql.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">PostgreSQL</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/heroku.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">Heroku</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/golang.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">Go</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/java.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">Java</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/linux.png" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">Linux</h6>
-                    </div>
-
-                    <div class="topic mb-3">
-                        <img src="img/freebsd_logo.jpg" class="mr-2 rounded-circle topic__image" alt="...">
-                        <h6 class="mt-0 mb-0 text-secondary">FreeBSD</h6>
-                    </div>
-                </div>
-
-                <div class="tags">
-                    <h2 class="lead text-secondary mb-3"># Tags</h2>
-
-                    <a href="#" class="badge badge-pill badge-primary">python</a>
-                    <a href="#" class="badge badge-pill badge-primary">django</a>
-                    <a href="#" class="badge badge-pill badge-primary">dev ops</a>
-                    <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
-                    <a href="#" class="badge badge-pill badge-primary">aws</a>
-                    <a href="#" class="badge badge-pill badge-primary">pep8</a>
-                    <a href="#" class="badge badge-pill badge-primary">vs code</a>
-                    <a href="#" class="badge badge-pill badge-primary">atom</a>
-                    <a href="#" class="badge badge-pill badge-primary">vim</a>
-
-                </div>
-            </div>
-
-            <div class="col-md-7 feeds">
+            <!-- Feeds -->
+            <div class="col-md-9 feeds">
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title pb-2">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
+                            <!-- Logged In User Avataar -->
+                            <img src="{% static 'img/logo.png' %}" width="30px" class="mr-1 rounded-circle mb-2" alt="">
                             Ask a question ?
                         </h5>
+                        <!-- Form -->
                         <form action="" method="post">
                             <div class="form-group">
                                 <textarea class="form-control" id="question" rows="3"></textarea>
                             </div>
+                            <!-- CTA -->
                             <button class="btn btn-outline-danger" type="submit">Create</button>
                         </form>
                     </div>
                 </div>
 
+                <!-- Item -->
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            Which are the best databases that can be used with Django ?</h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Posted 5 mins ago.
-                        </h6>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
-                    </div>
-                </div>
-
-                <div class="card shadow-sm mb-2">
-                    <div class="card-body">
-
-                        <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            Which are the best databases that can be used with Django ?</h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Posted 10 mins ago.
-                        </h6>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
-                    </div>
-                </div>
-
-                <div class="card shadow-sm mb-2">
-                    <div class="card-body">
-
-                        <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            Which are the best databases that can be used with Django ?</h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
-                    </div>
-                </div>
-
-                <div class="card shadow-sm mb-2">
-                    <div class="card-body">
-
-                        <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            How is django vs flask, is django suitable to create REST api, also can it scale ?
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="{% static 'img/logo.png' %}" width="25px" class="mr-1 rounded-circle mb-2"
+                                    alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 5 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- CTA -->
                         <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
+                        <a href="#" class="card-link text-danger">Answer</a>
+                        <a href="#" class="card-link text-danger">View All Answers</a>
                     </div>
                 </div>
 
+                <!-- Item -->
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            How is django vs flask, is django suitable to create REST api, also can it scale ?
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="img/logo.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 10 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- CTA -->
                         <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
+                        <a href="#" class="card-link text-danger">Answer</a>
+                        <a href="#" class="card-link text-danger">View All Answers</a>
                     </div>
                 </div>
 
+                <!-- Item -->
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            How is django vs flask, is django suitable to create REST api, also can it scale ?
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="img/logo.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 5 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- Answer -->
+                        <a class="card-link text-dark" href="#">
+                            <!-- Answer Author Avataar -->
+                            <img src="img/anilkulkarni.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                            <!-- Answer Text -->
+                            Relational databases like PostgreSQL, MySQL, Oracle are well supported
+                            by django. Additionally Django ORM provides a nice layer of abstraction...
+                        </a>
+                        <!-- CTA -->
+                        <div class="mt-3">
+                            <a href="#" class="card-link text-danger">View</a>
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Item -->
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            How is django vs flask, is django suitable to create REST api, also can it scale ?
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="img/logo.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 5 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- Answer -->
+                        <a class="card-link text-dark" href="#">
+                            <!-- Answer Author Avataar -->
+                            <img src="img/anilkulkarni.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                            <!-- Answer Text -->
+                            Relational databases like PostgreSQL, MySQL, Oracle are well supported
+                            by django. Additionally Django ORM provides a nice layer of abstraction...
+                        </a>
+                        <!-- CTA -->
+                        <div class="mt-3">
+                            <a href="#" class="card-link text-danger">View</a>
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Item -->
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            How is django vs flask, is django suitable to create REST api, also can it scale ?
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="img/logo.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 5 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- Answer -->
+                        <a class="card-link text-dark" href="#">
+                            <!-- Answer Author Avataar -->
+                            <img src="img/anilkulkarni.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                            <!-- Answer Text -->
+                            Relational databases like PostgreSQL, MySQL, Oracle are well supported
+                            by django. Additionally Django ORM provides a nice layer of abstraction...
+                        </a>
+                        <!-- CTA -->
+                        <div class="mt-3">
+                            <a href="#" class="card-link text-danger">View</a>
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Item -->
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            How is django vs flask, is django suitable to create REST api, also can it scale ?
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="img/logo.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 5 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- Answer -->
+                        <a class="card-link text-dark" href="#">
+                            <!-- Answer Author Avataar -->
+                            <img src="{% static 'img/anilkulkarni.png' %}" width="25px" class="mr-1 rounded-circle mb-2"
+                                alt="">
+                            <!-- Answer Text -->
+                            Relational databases like PostgreSQL, MySQL, Oracle are well supported
+                            by django. Additionally Django ORM provides a nice layer of abstraction...
+                        </a>
+                        <!-- CTA -->
+                        <div class="mt-3">
+                            <a href="#" class="card-link text-danger">View</a>
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Item -->
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            How is django vs flask, is django suitable to create REST api, also can it scale ?
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="img/logo.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 5 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- Answer -->
+                        <a class="card-link text-dark" href="#">
+                            <!-- Answer Author Avataar -->
+                            <img src="img/anilkulkarni.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                            <!-- Answer Text -->
+                            Relational databases like PostgreSQL, MySQL, Oracle are well supported
+                            by django. Additionally Django ORM provides a nice layer of abstraction...
+                        </a>
+                        <!-- CTA -->
+                        <div class="mt-3">
+                            <a href="#" class="card-link text-danger">View</a>
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Item -->
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            How is django vs flask, is django suitable to create REST api, also can it scale ?
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="img/logo.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 5 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- Answer -->
+                        <a class="card-link text-dark" href="#">
+                            <!-- Answer Author Avataar -->
+                            <img src="img/anilkulkarni.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                            <!-- Answer Text -->
+                            Relational databases like PostgreSQL, MySQL, Oracle are well supported
+                            by django. Additionally Django ORM provides a nice layer of abstraction...
+                        </a>
+                        <!-- CTA -->
+                        <div class="mt-3">
+                            <a href="#" class="card-link text-danger">View</a>
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Item -->
                 <div class="card shadow-sm mb-2">
                     <div class="card-body">
-
                         <h5 class="card-title">
-                            <img src="img/logo.png" width="30px" class="mr-1 rounded-circle mb-2" alt="">
-                            How is django vs flask, is django suitable to create REST api, also can it scale ?
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="img/logo.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">Answered 3 days ago.
-                        </h6>
-                        <p class="card-text">Relational databases like PostgreSQL, MySQL, Oracle are well supported
-                            by django. Additionally Django ORM provides a nice layer of abstraction.</p>
-                        <a href="#" class="card-link text-danger">View</a>
-                        <a href="#" class="card-link text-danger">Reply</a>
-                        <a href="#" class="card-link text-danger">Comment</a>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 5 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- Answer -->
+                        <a class="card-link text-dark" href="#">
+                            <!-- Answer Author Avataar -->
+                            <img src="img/anilkulkarni.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                            <!-- Answer Text -->
+                            Relational databases like PostgreSQL, MySQL, Oracle are well supported
+                            by django. Additionally Django ORM provides a nice layer of abstraction...
+                        </a>
+                        <!-- CTA -->
+                        <div class="mt-3">
+                            <a href="#" class="card-link text-danger">View</a>
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="card shadow-sm mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="#" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="img/logo.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                Which are the best databases that can be used with Django ?
+                            </a>
+                        </h5>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted 5 mins ago.
+                            <!-- Tags -->
+                            <a href="#" class="badge badge-pill badge-primary">python</a>
+                            <a href="#" class="badge badge-pill badge-primary">django</a>
+                            <a href="#" class="badge badge-pill badge-primary">dev ops</a>
+                            <a href="#" class="badge badge-pill badge-primary">digital ocean</a>
+                            <a href="#" class="badge badge-pill badge-primary">aws</a>
+                            <a href="#" class="badge badge-pill badge-primary">pep8</a>
+                        </p>
+                        <!-- Answer -->
+                        <a class="card-link text-dark" href="#">
+                            <!-- Answer Author Avataar -->
+                            <img src="img/anilkulkarni.png" width="25px" class="mr-1 rounded-circle mb-2" alt="">
+                            <!-- Answer Text -->
+                            Relational databases like PostgreSQL, MySQL, Oracle are well supported
+                            by django. Additionally Django ORM provides a nice layer of abstraction...
+                        </a>
+                        <!-- CTA -->
+                        <div class="mt-3">
+                            <a href="#" class="card-link text-danger">View</a>
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
                     </div>
                 </div>
 
                 <nav class="mt-5" aria-label="...">
-                    <ul class="pagination justify-content-center">
+                    <ul class="pagination justify-content-start">
                         <li class="page-item disabled">
                             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                         </li>
@@ -331,81 +422,179 @@ Home
 
             </div>
 
-            <div class="col-md-3 sidebar-updates">
-
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
                 <div class="recent-questions mb-5 pb-3 border-bottom">
+                    <!-- Heading -->
                     <h2 class="lead text-secondary mb-4"># Recent Questions</h2>
 
+                    <!-- Item -->
                     <div class="media mb-3">
+                        <!-- Question Author Avataar -->
                         <img src="{% static 'img/logo.png' %}" width="25px" class="mr-2 rounded-circle" alt="...">
                         <div class="media-body">
-                            <p class="mt-0 mb-0 text-secondary">How to choose a right web framework ?</p>
-                            <a href="#" class="small text-danger">Reply</a>
+                            <p class="mt-0 mb-0 text-secondary">
+                                <!-- Question Title -->
+                                <a href="#" class="text-dark">
+                                    How to choose a right web framework ?
+                                </a>
+                            </p>
+                            <!-- CTA -->
+                            <a href="#" class="small text-danger">Answer</a>
                         </div>
                     </div>
 
+                    <!-- Item -->
                     <div class="media mb-3">
+                        <!-- Question Author Avataar -->
                         <img src="img/logo.png" width="25px" class="mr-2 rounded-circle" alt="...">
                         <div class="media-body">
-                            <p class="mt-0 mb-0 text-secondary">Django vs Flask, is django suitable to
-                                create
-                                REST api, also can it scale ?</p>
-                            <a href="#" class="small text-danger">Reply</a>
+                            <p class="mt-0 mb-0 text-secondary">
+                                <!-- Question Title -->
+                                <a href="#" class="text-dark">
+                                    How to choose a right web framework ?
+                                </a>
+                            </p>
+                            <!-- CTA -->
+                            <a href="#" class="small text-danger">Answer</a>
                         </div>
                     </div>
 
+                    <!-- Item -->
                     <div class="media mb-3">
+                        <!-- Question Author Avataar -->
                         <img src="img/logo.png" width="25px" class="mr-2 rounded-circle" alt="...">
                         <div class="media-body">
-                            <p class="mt-0 mb-0 text-secondary">Is Django used in enterprise applications ?</p>
-                            <a href="#" class="small text-danger">Reply</a>
+                            <p class="mt-0 mb-0 text-secondary">
+                                <!-- Question Title -->
+                                <a href="#" class="text-dark">
+                                    How to choose a right web framework ?
+                                </a>
+                            </p>
+                            <!-- CTA -->
+                            <a href="#" class="small text-danger">Answer</a>
                         </div>
                     </div>
 
+                    <!-- Item -->
                     <div class="media mb-3">
+                        <!-- Question Author Avataar -->
                         <img src="img/logo.png" width="25px" class="mr-2 rounded-circle" alt="...">
                         <div class="media-body">
-                            <p class="mt-0 mb-0 text-secondary">How to choose a right web framework ?</p>
-                            <a href="#" class="small text-danger">Reply</a>
+                            <p class="mt-0 mb-0 text-secondary">
+                                <!-- Question Title -->
+                                <a href="#" class="text-dark">
+                                    How to choose a right web framework ?
+                                </a>
+                            </p>
+                            <!-- CTA -->
+                            <a href="#" class="small text-danger">Answer</a>
                         </div>
                     </div>
+
+                    <!-- Item -->
+                    <div class="media mb-3">
+                        <!-- Question Author Avataar -->
+                        <img src="img/logo.png" width="25px" class="mr-2 rounded-circle" alt="...">
+                        <div class="media-body">
+                            <p class="mt-0 mb-0 text-secondary">
+                                <!-- Question Title -->
+                                <a href="#" class="text-dark">
+                                    How to choose a right web framework ?
+                                </a>
+                            </p>
+                            <!-- CTA -->
+                            <a href="#" class="small text-danger">Answer</a>
+                        </div>
+                    </div>
+
                 </div>
 
+                <!-- Top Contributors -->
                 <div class="top-contributors">
                     <h2 class="lead text-secondary mb-4"># Top Contributors</h2>
 
+                    <!-- Item -->
                     <div class="media mb-3">
+                        <!-- Avataar -->
                         <img src="{% static 'img/anilkulkarni.png' %}" width="25px" class="mr-2 rounded-circle"
                             alt="...">
                         <div class="media-body">
-                            <h5 class="mt-0 mb-0 text-secondary">Anil Kulkarni</h5>
-                            <a href="#" class="small text-danger">Follow</a>
+                            <h5 class="mt-0 mb-0 text-secondary">
+                                <!-- Profile Link -->
+                                <a href="#" class="text-secondary">
+                                    Anil Kulkarni
+                                </a>
+                            </h5>
+                            <!-- Profile Link -->
+                            <a href="#" class="small text-danger">View Profile</a>
                         </div>
                     </div>
 
+                    <!-- Item -->
                     <div class="media mb-3">
-                        <img src="img/octallium.jpg" width="25px" class="mr-2 rounded-circle" alt="...">
+                        <!-- Avataar -->
+                        <img src="img/anilkulkarni.png" width="25px" class="mr-2 rounded-circle" alt="...">
                         <div class="media-body">
-                            <h5 class="mt-0 mb-0 text-secondary">Octallium</h5>
-                            <a href="#" class="small text-danger">Follow</a>
+                            <h5 class="mt-0 mb-0 text-secondary">
+                                <!-- Profile Link -->
+                                <a href="#" class="text-secondary">
+                                    Anil Kulkarni
+                                </a>
+                            </h5>
+                            <!-- Profile Link -->
+                            <a href="#" class="small text-danger">View Profile</a>
                         </div>
                     </div>
 
+                    <!-- Item -->
                     <div class="media mb-3">
-                        <img src="img/logo.png" width="25px" class="mr-2 rounded-circle" alt="...">
+                        <!-- Avataar -->
+                        <img src="img/anilkulkarni.png" width="25px" class="mr-2 rounded-circle" alt="...">
                         <div class="media-body">
-                            <h5 class="mt-0 mb-0 text-secondary">Anil Kulkarni</h5>
-                            <a href="#" class="small text-danger">Follow</a>
+                            <h5 class="mt-0 mb-0 text-secondary">
+                                <!-- Profile Link -->
+                                <a href="#" class="text-secondary">
+                                    Anil Kulkarni
+                                </a>
+                            </h5>
+                            <!-- Profile Link -->
+                            <a href="#" class="small text-danger">View Profile</a>
                         </div>
                     </div>
 
+                    <!-- Item -->
                     <div class="media mb-3">
-                        <img src="img/logo.png" width="25px" class="mr-2 rounded-circle" alt="...">
+                        <!-- Avataar -->
+                        <img src="img/anilkulkarni.png" width="25px" class="mr-2 rounded-circle" alt="...">
                         <div class="media-body">
-                            <h5 class="mt-0 mb-0 text-secondary">Anil Kulkarni</h5>
-                            <a href="#" class="small text-danger">Follow</a>
+                            <h5 class="mt-0 mb-0 text-secondary">
+                                <!-- Profile Link -->
+                                <a href="#" class="text-secondary">
+                                    Anil Kulkarni
+                                </a>
+                            </h5>
+                            <!-- Profile Link -->
+                            <a href="#" class="small text-danger">View Profile</a>
                         </div>
                     </div>
+
+                    <!-- Item -->
+                    <div class="media mb-3">
+                        <!-- Avataar -->
+                        <img src="img/anilkulkarni.png" width="25px" class="mr-2 rounded-circle" alt="...">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-0 text-secondary">
+                                <!-- Profile Link -->
+                                <a href="#" class="text-secondary">
+                                    Anil Kulkarni
+                                </a>
+                            </h5>
+                            <!-- Profile Link -->
+                            <a href="#" class="small text-danger">View Profile</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
