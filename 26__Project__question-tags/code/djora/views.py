@@ -65,6 +65,8 @@ def question_create(request):
             instance.author = request.user
             # Save and commit to database
             instance.save()
+            # Save tags, required becuase of (commit=False)
+            form.save_m2m()
             # Send a success message
             messages.success(request, 'Question created successfully!')
             # Redirect to the question detail view
