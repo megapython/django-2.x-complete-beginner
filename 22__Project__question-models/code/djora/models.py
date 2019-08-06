@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.shortcuts import reverse
+from django.utils.text import slugify
 
 
 User = get_user_model()
@@ -28,3 +29,7 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def save(self):
+        self.slug = slugify(self.title)
+        super(Question, self).save()
