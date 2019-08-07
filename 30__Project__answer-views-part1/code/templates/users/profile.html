@@ -1,0 +1,217 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Profile
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                    aria-controls="v-pills-home" aria-selected="true">Profile</a>
+                <a class="nav-link" id="v-pills-questions-tab" data-toggle="pill" href="#v-pills-questions" role="tab"
+                    aria-controls="v-pills-questions" aria-selected="false">Questions</a>
+                <a class="nav-link" id="v-pills-answers-tab" data-toggle="pill" href="#v-pills-answers" role="tab"
+                    aria-controls="v-pills-answers" aria-selected="false">Answers</a>
+
+                {% if show_buttons %}
+                <a class="nav-link" id="v-pills-draft-questions-tab" data-toggle="pill" href="#v-pills-draft-questions"
+                    role="tab" aria-controls="v-pills-draft-questions" aria-selected="false">Draft - Questions</a>
+                <a class="nav-link" id="v-pills-draft-answers-tab" data-toggle="pill" href="#v-pills-draft-answers"
+                    role="tab" aria-controls="v-pills-draft-answers" aria-selected="false">Draft - Answers</a>
+                {% endif %}
+
+
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+                <!-- Profile -->
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                    aria-labelledby="v-pills-home-tab">
+                    <div class="content-section">
+                        <div class="mb-3">
+                            <div class="mb-3">
+                                <img class="rounded-circle" src="{{ my_user.profile.avataar.url }}" width="100px">
+                            </div>
+                            <div class="">
+                                <h2 class="account-heading">{{ my_user.first_name|capfirst }}
+                                    {{ my_user.last_name|capfirst }}
+                                </h2>
+                                <p class="text-secondary">Email - {{ my_user.email }}</p>
+                                <p class="text-secondary">Age - {{ my_user.profile.age }}</p>
+                            </div>
+
+                            {% if show_buttons %}
+                            <a class="btn btn-danger" href="{% url 'profile_update' user.username %}">Update</a>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Question List -->
+                <div class="tab-pane fade" id="v-pills-questions" role="tabpanel"
+                    aria-labelledby="v-pills-questions-tab">
+
+
+                    {% if p_questions %}
+                    {% for question in p_questions %}
+                    <!-- Item -->
+                    <div class="card shadow-sm mb-2">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ question.get_absolute_url }}" class="card-link text-dark">
+                                    <!-- Question Author Avataar -->
+                                    <img src="{{ question.author.profile.avataar.url }}" width="25px"
+                                        class="mr-1 rounded-circle mb-2" alt="">
+                                    <!-- Question Title -->
+                                    {{ question.title }}
+                                </a>
+                            </h5>
+                            <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                                <!-- Time Stamp -->
+                                Posted {{ question.publish|timesince }} ago.
+                                <!-- Tags -->
+                                {% for tag in question.tags.all %}
+                                <a href="#" class="badge badge-pill badge-primary">{{ tag.name }}</a>
+                                {% endfor %}
+                            </p>
+                            <!-- CTA -->
+                            <a href="{{ question.get_absolute_url }}" class="card-link text-danger">View</a>
+
+                            {% if show_buttons %}
+                            <a href="{% url 'question_update' question.pk %}" class="card-link text-danger">Edit</a>
+                            <a href="{% url 'question_delete' question.pk %}" class="card-link text-danger">Delete</a>
+                            {% endif %}
+
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <h2>There are no questions yet</h2>
+                    {% endif %}
+
+                </div>
+
+                <!-- Answer List -->
+                <div class="tab-pane fade" id="v-pills-answers" role="tabpanel" aria-labelledby="v-pills-answers-tab">
+
+                    {% if p_answers %}
+                    {% for answer  in p_answers %}
+                    <!-- Item -->
+                    <div class="card shadow-sm mb-2">
+                        <div class="card-body">
+                            <!-- Answer Body -->
+                            {{ answer.answer|safe|truncatewords:20 }}
+                        </div>
+
+                        <div class="card-footer text-muted">
+                            <!-- CTA -->
+                            {% if show_buttons %}
+                            <a href="#" class="card-link">Edit</a>
+                            <a href="#" class="card-link">Delete</a>
+                            {% endif %}
+                            <a href="{% url 'answer_detail' answer.question.id answer.id %}" class="card-link">View
+                                Answer</a>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <h2>There are no answers yet!</h2>
+                    {% endif %}
+
+                </div>
+
+
+                {% if show_buttons %}
+
+                <!-- Draft Questions -->
+                <div class="tab-pane fade" id="v-pills-draft-questions" role="tabpanel"
+                    aria-labelledby="v-pills-draft-questions-tab">
+
+                    {% if d_questions %}
+                    {% for question in d_questions %}
+                    <!-- Item -->
+                    <div class="card shadow-sm mb-2">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ question.get_absolute_url }}" class="card-link text-dark">
+                                    <!-- Question Author Avataar -->
+                                    <img src="{{ question.author.profile.avataar.url }}" width="25px"
+                                        class="mr-1 rounded-circle mb-2" alt="">
+                                    <!-- Question Title -->
+                                    {{ question.title }}
+                                </a>
+                            </h5>
+                            <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                                <!-- Time Stamp -->
+                                Posted {{ question.publish|timesince }} ago.
+                                <!-- Tags -->
+                                {% for tag in question.tags.all %}
+                                <a href="#" class="badge badge-pill badge-primary">{{ tag.name }}</a>
+                                {% endfor %}
+                            </p>
+                            <!-- CTA -->
+                            <a href="{{ question.get_absolute_url }}" class="card-link text-danger">View</a>
+
+                            {% if show_buttons %}
+                            <a href="{% url 'question_update' question.pk %}" class="card-link text-danger">Edit</a>
+                            <a href="{% url 'question_delete' question.pk %}" class="card-link text-danger">Delete</a>
+                            {% endif %}
+
+                            <a href="#" class="card-link text-danger">Answer</a>
+                            <a href="#" class="card-link text-danger">View All Answers</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <h2>There are no draft questions yet</h2>
+                    {% endif %}
+
+                </div>
+
+                <!-- Draft Answers -->
+                <div class="tab-pane fade" id="v-pills-draft-answers" role="tabpanel"
+                    aria-labelledby="v-pills-draft-answers-tab">
+
+                    {% if d_answers %}
+                    {% for answer  in d_answers %}
+                    <!-- Item -->
+                    <div class="card shadow-sm mb-2">
+                        <div class="card-body">
+                            <!-- Answer Body -->
+                            {{ answer.answer|safe|truncatewords:20 }}
+                        </div>
+
+                        <div class="card-footer text-muted">
+                            <!-- CTA -->
+                            {% if show_buttons %}
+                            <a href="#" class="card-link">Edit</a>
+                            <a href="#" class="card-link">Delete</a>
+                            {% endif %}
+                            <a href="{% url 'answer_detail' answer.question.id answer.id %}" class="card-link">View
+                                Answer</a>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <h2>There are no draft answers yet!</h2>
+                    {% endif %}
+                </div>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
