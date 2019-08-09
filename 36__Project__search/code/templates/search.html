@@ -1,0 +1,74 @@
+{% extends '_base.html' %}
+
+{% block title %}
+Search Results
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+    {% if q_results %}
+
+        {% for question in q_results %}
+                <!-- Item -->
+                <div class="card shadow-sm mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{{ question.get_absolute_url }}" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="{{ question.author.profile.avataar.url }}" width="25px"
+                                    class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                {{ question.title }}
+                            </a>
+                        </h5>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted {{ question.publish|timesince }} ago.
+                            <!-- Tags -->
+                            {% for tag in question.tags.all %}
+                            <a href="{% url 'question_list_with_tags' tag.slug %}"
+                                class="badge badge-pill badge-primary">{{ tag.name }}</a>
+                            {% endfor %}
+                        </p>
+                        <!-- CTA -->
+                        <a href="{{ question.get_absolute_url }}" class="card-link text-danger">View</a>
+                        <a href="{% url 'answer_create' question.pk %}" class="card-link text-danger">Answer</a>
+                        <a href="{% url 'answer_list' question.pk %}" class="card-link text-danger">View All Answers</a>
+                    </div>
+                </div>
+                {% endfor %}
+    {% endif %}
+
+    {% if a_results %}
+        {% for answer in a_results %}
+                <!-- Item -->
+                <div class="card shadow-sm mb-2">
+                    <div class="card-body">
+                        <!-- Answer Body -->
+                        {{ answer.answer|safe|truncatewords:50 }}
+                    </div>
+
+                    <div class="card-footer text-muted">
+                        <!-- CTA -->
+                        <a href="{% url 'answer_detail' answer.question.id answer.id %}" class="card-link">View Answer</a>
+                        <!-- Answer Author Profile URL -->
+                        <a href="{% url 'profile' answer.author.username %}" class="card-link text-danger">
+                            <span class="mr-2">Answered By - </span>
+                            <!-- Answer Author Avataar -->
+                            <img src="{{ answer.author.profile.avataar.url }}" width="30px"
+                                class="mr-1 rounded-circle mb-2" alt="">
+                            {{ answer.author.first_name|capfirst }}
+                            {{ answer.author.last_name|capfirst }}
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+    {% endif %}
+
+    {% if not q_results and not r_results %}
+        <h2>No results found for: {{ request.GET.q }}</h2>
+    {% endif %}
+
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,164 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+Home
+{% endblock title %}
+
+
+{% block content %}
+<section class="section-main mb-5">
+    <div class="container">
+        <div class="row main-content">
+
+            <!-- Feeds -->
+            <div class="col-md-9 feeds">
+
+                {% if form %}
+                <div class="card shadow-sm mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title pb-2">
+                            <!-- Logged In User Avataar -->
+                            <img src="{{ user.profile.avataar.url }}" width="30px" class="mr-1 rounded-circle mb-2"
+                                alt="">
+                            Ask a question ?
+                        </h5>
+                        <!-- Form -->
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <!-- CTA -->
+                            <button class="btn btn-outline-danger" type="submit">Quick Create</button>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+
+
+                {% for question in questions %}
+                <!-- Item -->
+                <div class="card shadow-sm mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{{ question.get_absolute_url }}" class="card-link text-dark">
+                                <!-- Question Author Avataar -->
+                                <img src="{{ question.author.profile.avataar.url }}" width="25px"
+                                    class="mr-1 rounded-circle mb-2" alt="">
+                                <!-- Question Title -->
+                                {{ question.title }}
+                            </a>
+                        </h5>
+                        <p class="card-subtitle mb-2 text-muted border-bottom mb-1 pb-2 small">
+                            <!-- Time Stamp -->
+                            Posted {{ question.publish|timesince }} ago.
+                            <!-- Tags -->
+                            {% for tag in question.tags.all %}
+                            <a href="{% url 'question_list_with_tags' tag.slug %}"
+                                class="badge badge-pill badge-primary">{{ tag.name }}</a>
+                            {% endfor %}
+                        </p>
+                        <!-- CTA -->
+                        <a href="{{ question.get_absolute_url }}" class="card-link text-danger">View</a>
+                        <a href="{% url 'answer_create' question.pk %}" class="card-link text-danger">Answer</a>
+                        <a href="{% url 'answer_list' question.pk %}" class="card-link text-danger">View All Answers</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- Pagination -->
+                {% if questions.has_other_pages %}
+                <nav class="mt-5" aria-label="...">
+                    <ul class="pagination justify-content-start">
+                        <!-- Previous -->
+                        {% if questions.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ questions.previous_page_number }}"
+                                tabindex="-1">Previous</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        {% endif %}
+                        <!-- Current Items -->
+                        {% for i in questions.paginator.page_range %}
+                        {% if questions.number == i %}
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">{{ i }} <span class="sr-only">(current)</span></span>
+                        </li>
+                        {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        <!-- Next -->
+                        {% if questions.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ questions.next_page_number }}">Next</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-disabled="true">Next</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
+                <div class="recent-questions mb-5 pb-3 border-bottom">
+                    <!-- Heading -->
+                    <h2 class="lead text-secondary mb-4"># Recent Questions</h2>
+
+                    {% for rq in recent_question %}
+                    <!-- Item -->
+                    <div class="media mb-3">
+                        <!-- Question Author Avataar -->
+                        <img src="{{ rq.author.profile.avataar.url }}" width="25px" class="mr-2 rounded-circle"
+                            alt="...">
+                        <div class="media-body">
+                            <p class="mt-0 mb-0 text-secondary">
+                                <!-- Question Title -->
+                                <a href="{% url 'question_detail' rq.id %}" class="text-dark">
+                                    {{ rq.title }}
+                                </a>
+                            </p>
+                            <!-- CTA -->
+                            <a href="{% url 'answer_create' rq.pk %}" class="small text-danger">Answer</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Top Contributors -->
+                <div class="top-contributors">
+                    <h2 class="lead text-secondary mb-4"># Top Contributors</h2>
+
+                    {% for tc in top_contributors %}
+                    <!-- Item -->
+                    <div class="media mb-3">
+                        <!-- Avataar -->
+                        <img src="{{ tc.profile.avataar.url }}" width="25px" class="mr-2 rounded-circle" alt="...">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-0 text-secondary">
+                                <!-- Profile Link -->
+                                <a href="{% url 'profile' tc.username %}" class="text-secondary">
+                                    {{ tc.first_name|capfirst }}
+                                    {{ tc.last_name|capfirst }}
+                                </a>
+                            </h5>
+                            <!-- Profile Link -->
+                            <a href="{% url 'profile' tc.username %}" class="small text-danger">View Profile</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
