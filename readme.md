@@ -28,8 +28,7 @@
     13. User Authentication
     14. Handling Static Files
     15. Packaging Your Django Project
-    16. Testing
-    17. Deploying on Heroku
+    16. Deploying on Heroku
 
 ## Description
 
@@ -41,9 +40,9 @@ In this course you will learn all these fantastic features discussed above. The 
 
 The course is designed to introduce concepts gradually with quizzes at the end of each chapter to test your knowledge of Django. The course consist of **1 Mega Project** -
 
-    1. Quora Clone
+    1. Quora Clone (Djora)
 
-At the end of the course you will be making a multi featured 'Quora' Clone called as **'Djora'** (Django + Quora) along with custom user authentication, user profile, questions, answers, image uploads, tests,etc. This project will involve all the fundamentals of Django and will also introduce many more advanced concepts.
+At the end of the course you will be making a multi featured 'Quora' Clone called as **'Djora'** (Django + Quora) along with custom user authentication, user profile, questions, answers, image uploads, search, etc. This project will involve all the fundamentals of Django and will also introduce many more advanced concepts.
 
 And finally, you will be packaging the Django project for deployment on Heroku and going live!!!
 
@@ -61,7 +60,5 @@ And finally, you will be packaging the Django project for deployment on Heroku a
 - Anil Kulkarni
 
 ## Links
-
-[Mega Python](https://www.octallium.com/megapython)
 
 [Udemy](https://www.octallium.com/megapython)
