@@ -2,7 +2,7 @@
 
 **Learn all the fundamentals of Django for web development by creating a 'Quora' clone which you will deploy to Heroku.**
 
-![Django Beginner](assets/img/quddle-udemy-banner-github.png)
+![Django Beginner](assets/img/banner.png)
 
 ## Requirements -
 
