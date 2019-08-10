@@ -39,14 +39,7 @@
                         <div>{{ question.body|safe }}</div>
                         <!-- CTA -->
                         <div class="mt-3">
-
-                            {% if show_buttons %}
-                            <a href="#" class="card-link text-danger">Edit</a>
-                            <a href="#" class="card-link text-danger">Delete</a>
-                            {% else %}
                             <a href="#" class="card-link text-danger">Answer</a>
-                            {% endif %}
-
                         </div>
                     </div>
                 </div>
@@ -60,8 +53,12 @@
 
                     <div class="card-footer text-muted">
                         <!-- CTA -->
+
+                        {% if show_buttons %}
                         <a href="#" class="card-link">Edit</a>
                         <a href="#" class="card-link">Delete</a>
+                        {% endif %}
+
                         <!-- Answer Author Profile URL -->
                         <a href="{% url 'profile' answer.author.username %}" class="card-link text-danger">
                             <span class="mr-2">Answered By - </span>

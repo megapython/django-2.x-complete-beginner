@@ -53,8 +53,12 @@
 
                     <div class="card-footer text-muted">
                         <!-- CTA -->
+
+                        {% if show_buttons %}
                         <a href="{% url 'answer_update' answer.question.pk answer.pk %}" class="card-link">Edit</a>
                         <a href="{% url 'answer_delete' answer.question.pk answer.pk %}" class="card-link">Delete</a>
+                        {% endif %}
+
                         <!-- Answer Author Profile URL -->
                         <a href="{% url 'profile' answer.author.username %}" class="card-link text-danger">
                             <span class="mr-2">Answered By - </span>
