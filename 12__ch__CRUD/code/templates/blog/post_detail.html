@@ -11,7 +11,7 @@
 <p>{{ post.body }}</p>
 <p>
     <a href="{% url 'post_update' post.pk %}">Update</a>
-    <a href="{% url 'post_delete' post.pk %}">Delete</a>
+    <a href="{% url 'post_delete_confirm' post.pk %}">Delete</a>
 
 </p>
 {% endblock content %}

@@ -28,7 +28,7 @@ def post_detail(request, pk):
 def create_post(request):
     # If request is of type POST
     if request.method == 'POST':
-        form = CreatePostForm(request.POST or None)
+        form = CreatePostForm(request.POST)
         if form.is_valid():
             # Save form only if valid
             form.save()
@@ -46,23 +46,30 @@ def create_post(request):
 # Update Post / Update View
 def post_update(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    form = UpdatePostForm(request.POST or None, instance=post)
-    if form.is_valid():
-        form.save()
-        return redirect('post_detail', pk=pk)
+    if request.method == 'POST':
+        form = UpdatePostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('post_detail', pk=pk)
+    else:
+        form = UpdatePostForm(instance=post)
     context = {
         'form': form
     }
     return render(request, 'blog/post_update.html', context)
 
 
-# Delete Post / Delete View
-def post_delete(request, pk):
+# Delete Post Confirmation
+def post_delete_confirm(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    if request.method == 'POST':
-        post.delete()
-        return redirect('home')
     context = {
         'post': post
     }
-    return render(request, 'blog/post_delete.html', context)
+    return render(request, 'blog/post_delete_confirm.html', context)
+
+
+# Delete Post / Delete View
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('home')

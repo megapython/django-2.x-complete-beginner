@@ -8,10 +8,7 @@ Delete {{ post.title }}
 
 {% block content %}
 <h1>Delete Post</h1>
-<h2>{{ post.title }}</h2>
+<h3>{{ post.title }}</h3>
 <p>Are you sure you want to delete this post ?</p>
-<form action="" method="post">
-    {% csrf_token %}
-    <button type="submit">Delete Post</button>
-</form>
+    <a class="btn btn-primary" href="{% url 'post_delete' post.id %}">Confirm Delete</a>
 {% endblock content %}
